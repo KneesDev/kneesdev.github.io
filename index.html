@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>KneesDev</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" href="/assets/favicon.ico">
+</head>
+
+<body>
+    <div class="desktop-icons">
+        <div class="icon" onclick="openNotepad()">
+            <img src="/assets/icons/notepad.png" draggable="false" alt="Notepad">
+            <span>Notepad</span>
+        </div>
+        <div class="icon" onclick="openDos()">
+            <img src="/assets/icons/dos.png" draggable="false" alt="MS-DOS">
+            <span>MS-DOS</span>
+        </div>
+        <div class="icon" onclick="openGitHub()">
+            <img src="/assets/icons/github.png" draggable="false" alt="GitHub">
+            <span>GitHub</span>
+        </div>
+        <div class="icon" onclick="openTwitter()">
+            <img src="/assets/icons/twitter.png" draggable="false" alt="Twitter">
+            <span>Twitter</span>
+        </div>
+        <div class="icon" onclick="openDiscord()">
+            <img src="/assets/icons/discord.png" draggable="false" alt="Discord">
+            <span>Discord</span>
+        </div>
+        <div class="icon" onclick="toggleMusic()">
+            <img src="/assets/icons/paused.png" draggable="false" alt="Music" id="musicIcon">
+            <span>Music</span>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Thanks to <a href="https://superdev.one" target="_blank">SuperDev</a> for contributing</p>
+    </div>
+    <div class="taskbar">
+        <button class="start-btn" onclick="toggleStartMenu()">
+            <img src="/assets/icons/windows.png" draggable="false" alt="Start">
+            <span>Start</span>
+        </button>
+        <div class="taskbar-time" id="time"></div>
+    </div>
+    <div class="start-menu" id="startMenu">
+        <div class="start-header">
+            <img src="/assets/icons/user.png" draggable="false" alt="User Icon">
+            <div class="user-info">
+                <span>K</span><span>n</span><span>e</span><span>e</span><span>s</span><span>D</span><span>e</span><span>v</span>
+            </div>
+        </div>
+        <hr>
+        <ul>
+            <li onclick="openContactModal()">Contact</li>
+            <li onclick="openDonateModal()">Donate</li>
+            <hr>
+            <li onclick="openAboutModal()">About</li>
+            <li onclick="openShutdown()">Shut Down</li>
+        </ul>
+    </div>
+    <div class="modal" id="notepadModal">
+        <div class="window" id="notepadWindow">
+            <div class="title-bar">
+                <div class="title-bar-text">Notepad</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" class="title-bar-button" onclick="closeNotepad()"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <textarea rows="10" cols="50" id="note" class="textarea" onkeydown="checkNotepad()"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="dosModal">
+        <div class="window" id="dosWindow">
+            <div class="title-bar">
+                <div class="title-bar-text">MS-DOS</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" class="title-bar-button" onclick="closeDos()"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <p>I'm still working on it 😭</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="projectsModal" style="height: auto;width: auto;">
+        <div class="window" id="projectsWindow" style="height: 100%;width: 100%;">
+            <div class="title-bar">
+                <div class="title-bar-text">Projects</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" class="title-bar-button" onclick="closeProjectsModal()"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="projects-grid">
+                    <div>
+                        <div class="project">
+                            <img src="https://chat.poxai.xyz/assets/bot.png" alt="Project 1" height="48px" width="48px">
+                            <div class="project-text">Some project idk</div>
+                        </div>
+                        <div class="project">
+                            <img src="https://chat.poxai.xyz/assets/bot.png" alt="Project 2" height="48px" width="48px">
+                            <div class="project-text">UwU project</div>
+                        </div>
+                        <div class="project">
+                            <img src="https://chat.poxai.xyz/assets/bot.png" alt="Project 3" height="48px" width="48px">
+                            <div class="project-text">hi</div>
+                        </div>
+                        <div class="project">
+                            <img src="https://chat.poxai.xyz/assets/bot.png" alt="Project 3" height="48px" width="48px">
+                            <div class="project-text">pizzuno losing streak</div>
+                        </div>
+                        <div class="project">
+                            <img src="https://chat.poxai.xyz/assets/bot.png" alt="Project 3" height="48px" width="48px">
+                            <div class="project-text">tic tac toe</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="aboutModal">
+        <div class="window" id="aboutWindow">
+            <div class="title-bar">
+                <div class="title-bar-text">About</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" class="title-bar-button" onclick="closeAboutModal()"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <p>Hi there, I'm a content creator, music producer, developer, and a huge K-Pop fan.</p>
+                <p>I'm obsessed with these groups:</p>
+                <ul>
+                    <li>NewJeans</li>
+                    <li>BLACKPINK</li>
+                    <li>Twice</li>
+                    <li>aespa</li>
+                    <li>IZ*ONE</li>
+                    <li>Tomorrow X Together</li>
+                </ul>
+                <p>My favorite programming languages are:</p>
+                <ul>
+                    <li>C#</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="contactModal">
+        <div class="window" id="contactWindow">
+            <div class="title-bar">
+                <div class="title-bar-text">Contact Me</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" class="title-bar-button" onclick="closeContactModal()"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <p>If you'd like to contact me, you can send an email at <a href="mailto:kneesdev@hotmail.com">kneesdev@hotmail.com</a> or follow me on social media. (can be found in the desktop)</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="donateModal">
+        <div class="window" id="donateWindow">
+            <div class="title-bar">
+                <div class="title-bar-text">Donate</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" class="title-bar-button" onclick="closeDonateModal()"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <p>If you'd like to support me, you can donate via one of the following methods:</p>
+                <p><a href="https://ko-fi.com/kneesdev" target="_blank">Donate via Ko-fi</a></p>
+                <div class="crypto">
+                    <img src="/assets/icons/bitcoin.png" alt="Bitcoin" height="14px" width="14px">
+                    <p>bc1qqnwaqycy6mz9tmws6qx5magsww6uxryctg7z8p</p>
+                </div>
+                <div class="crypto">
+                    <img src="/assets/icons/ethereum.png" alt="Ethereum" height="14px" width="14px">
+                    <p>0x744c40A263c9CbE24185a790C8Ec549ca3E3d487</p>
+                </div>
+                <div class="crypto">
+                    <img src="/assets/icons/litecoin.png" alt="Litecoin" height="14px" width="14px">
+                    <p>ltc1qu7q4hegc3gn6nfasksygk3pndpk33rsj0qy64l</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
