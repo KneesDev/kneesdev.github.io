@@ -135,7 +135,6 @@ function toggleMusic() {
 
 dragElement(document.getElementById("notepadModal"));
 dragElement(document.getElementById("dosModal"));
-dragElement(document.getElementById("projectsModal"));
 dragElement(document.getElementById("aboutModal"));
 dragElement(document.getElementById("contactModal"));
 dragElement(document.getElementById("donateModal"));
