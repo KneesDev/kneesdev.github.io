@@ -4,10 +4,15 @@ var contactModal = document.getElementById('contactModal');
 var donateModal = document.getElementById('donateModal');
 var dosModal = document.getElementById('dosModal');
 
+
+// start menu
+
 function toggleStartMenu() {
     var startMenu = document.getElementById('startMenu');
     startMenu.classList.toggle('show');
 }
+
+// startup sound
 
 function playStartupSound() {
     var audio = new Audio('/assets/sounds/startup.mp3');
@@ -17,6 +22,8 @@ function playStartupSound() {
 window.onload = function () {
     playStartupSound();
 };
+
+// windows opening/closing
 
 function openNotepad() {
     notepadModal.style.display = 'block';
@@ -105,6 +112,8 @@ function openShutdown() {
     toggleStartMenu();
 }
 
+// taskbar clock
+
 function updateClock() {
     const timeElement = document.getElementById('time');
     const currentTime = new Date();
@@ -116,6 +125,8 @@ function updateClock() {
     timeElement.textContent = timeString;
 }
 setInterval(updateClock, 1000);
+
+// music functionality
 
 var musicPlayer = new Audio('/assets/sounds/remember.m4a');
 var isPlaying = false;
@@ -132,6 +143,8 @@ function toggleMusic() {
     }
     isPlaying = !isPlaying;
 }
+
+// add dragging functionality for windows
 
 dragElement(document.getElementById("notepadModal"));
 dragElement(document.getElementById("dosModal"));
