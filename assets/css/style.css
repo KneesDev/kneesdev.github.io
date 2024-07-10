@@ -55,7 +55,7 @@ body::after {
 }
 
 h1 {
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-optical-sizing: auto;
     font-weight: 500;
     line-height: 1;
