@@ -1,154 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>KneesDev</title>
-    <link rel="stylesheet" href="https://unpkg.com/98.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="icon" href="/assets/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" href="/favicon.ico">
+    <script src="/assets/js/tailwind.min.js"></script>
 </head>
 
-<body>
-    <div class="desktop-icons">
-        <div class="icon" onclick="openNotepad()">
-            <img src="/assets/icons/notepad.png" draggable="false" alt="Notepad">
-            <span>Notepad</span>
-        </div>
-        <div class="icon" onclick="openDos()">
-            <img src="/assets/icons/dos.png" draggable="false" alt="MS-DOS">
-            <span>MS-DOS</span>
-        </div>
-        <div class="icon" onclick="openGitHub()">
-            <img src="/assets/icons/github.png" draggable="false" alt="GitHub">
-            <span>GitHub</span>
-        </div>
-        <div class="icon" onclick="openTwitter()">
-            <img src="/assets/icons/twitter.png" draggable="false" alt="Twitter">
-            <span>Twitter</span>
-        </div>
-        <div class="icon" onclick="openDiscord()">
-            <img src="/assets/icons/discord.png" draggable="false" alt="Discord">
-            <span>Discord</span>
-        </div>
-        <div class="icon" onclick="toggleMusic()">
-            <img src="/assets/icons/paused.png" draggable="false" alt="Music" id="musicIcon">
-            <span>Music</span>
-        </div>
-    </div>
-    <div class="footer">
-        <p>Thanks to <a href="https://superdev.one" target="_blank">SuperDev</a> for contributing</p>
-    </div>
-    <div class="taskbar">
-        <button class="start-btn" onclick="toggleStartMenu()">
-            <img src="/assets/icons/windows.png" draggable="false" alt="Start">
-            <span>Start</span>
-        </button>
-        <div class="taskbar-time" id="time"></div>
-    </div>
-    <div class="start-menu" id="startMenu">
-        <ul>
-            <li onclick="openContactModal()">Contact</li>
-            <li onclick="openDonateModal()">Donate</li>
-            <hr>
-            <li onclick="openAboutModal()">About</li>
-            <li onclick="openShutdown()">Shut Down</li>
-        </ul>
-    </div>
-    <div class="modal" id="notepadModal">
-        <div class="window" id="notepadWindow">
-            <div class="title-bar" id="notepadModal-header">
-                <div class="title-bar-text">Notepad</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Close" class="title-bar-button" onclick="closeNotepad()"></button>
+<body class="bg-black text-white">
+    <div class="home-indicator"></div>
+    <main>
+        <section class="overflow-hidden" id="hero">
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="mx-auto max-w-2xl lg:mx-0 flex lg:max-w-none items-center h-screen">
+                    <div class="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
+                        <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl font-blurIn">I craft modern websites for the world</h1>
+                        <p
+                            class="mt-6 text-lg leading-8 text-neutral-300 sm:max-w-md lg:max-w-none font-blurIn opacity-0">
+                            I specialize in crafting visually appealing and responsive websites. I bring ideas to life on the web, ensuring every project meets the highest standards of quality and innovation.</p>
+                    </div>
                 </div>
             </div>
-            <div class="window-body">
-                <textarea rows="10" cols="50" id="note" class="textarea" onkeydown="checkNotepad()"></textarea>
+        </section>
+        <!-- <section class="overflow-hidden" id="projects">
+            <div class="mx-auto h-screen">
+                <div class="flex flex-col md:flex-row justify-between h-full">
+                    <div class="flex-1 bg-orange-500">
+                        <div class="content mt-auto p-8 flex justify-between items-end w-full h-full">
+                            <h1 class="text-3xl">Project</h1>
+                            <button class="border border-white text-white p-3 hover:bg-white/20 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 9H3v20h20V18M18 4h10v10m0-10L14 18"/></svg>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative flex-1 bg-green-500">
+                        <div class="badge">PROJECTS</div>
+                        <div class="content mt-auto p-8 flex justify-between items-end w-full h-full">
+                            <h1 class="text-3xl">Project</h1>
+                            <button class="border border-white text-white p-3 hover:bg-white/20 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 9H3v20h20V18M18 4h10v10m0-10L14 18"/></svg>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-blue-500">
+                        <div class="content mt-auto p-8 flex justify-between items-end w-full h-full">
+                            <h1 class="text-3xl">Project</h1>
+                            <button class="border border-white text-white p-3 hover:bg-white/20 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 9H3v20h20V18M18 4h10v10m0-10L14 18"/></svg>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section> -->
+        <section class="overflow-hidden" id="contact">
+            <div class="mx-auto max-w-7xl">
+                <div class="relative isolate px-6 py-24 sm:py-32 lg:px-8">
+                    <div class="mx-auto max-w-xl lg:max-w-4xl">
+                      <h1 class="text-4xl font-medium tracking-tight text-white italic">Get in touch with me</h1>
+                      <div class="mt-8 flex flex-col gap-16 sm:gap-y-20 lg:flex-row">
+                        <form action="" method="POST" class="lg:flex-auto">
+                          <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                            <div>
+                              <label for="first-name" class="block text-sm font-medium leading-6 text-neutral-200">First name</label>
+                              <div class="mt-2.5">
+                                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-sm bg-neutral-950 border-b border-neutral-300 px-3.5 py-2 text-neutral-200 shadow-sm placeholder:text-neutral-400 focus:ring-1 focus:ring-inset focus:ring-neutral-100 transition sm:text-sm sm:leading-6">
+                              </div>
+                            </div>
+                            <div>
+                              <label for="last-name" class="block text-sm font-medium leading-6 text-neutral-200">Last name</label>
+                              <div class="mt-2.5">
+                                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-sm bg-neutral-950 border-b border-neutral-300 px-3.5 py-2 text-neutral-200 shadow-sm placeholder:text-neutral-400 focus:ring-1 focus:ring-inset focus:ring-neutral-100 transition sm:text-sm sm:leading-6">
+                              </div>
+                            </div>
+                            <div>
+                              <label for="budget" class="block text-sm font-medium leading-6 text-neutral-200">Budget</label>
+                              <div class="mt-2.5">
+                                <input id="budget" name="budget" type="text" class="block w-full rounded-sm bg-neutral-950 border-b border-neutral-300 px-3.5 py-2 text-neutral-200 shadow-sm placeholder:text-neutral-400 focus:ring-1 focus:ring-inset focus:ring-neutral-100 transition sm:text-sm sm:leading-6">
+                              </div>
+                            </div>
+                            <div>
+                              <label for="website" class="block text-sm font-medium leading-6 text-neutral-200">Website</label>
+                              <div class="mt-2.5">
+                                <input type="url" name="website" id="website" class="block w-full rounded-sm bg-neutral-950 border-b border-neutral-300 px-3.5 py-2 text-neutral-200 shadow-sm placeholder:text-neutral-400 focus:ring-1 focus:ring-inset focus:ring-neutral-100 transition sm:text-sm sm:leading-6">
+                              </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                              <label for="message" class="block text-sm font-medium leading-6 text-neutral-200">Message</label>
+                              <div class="mt-2.5">
+                                <textarea id="message" name="message" rows="4" class="block w-full rounded-sm bg-neutral-950 border-b border-neutral-300 px-3.5 py-2 text-neutral-200 shadow-sm placeholder:text-neutral-400 focus:ring-1 focus:ring-inset focus:ring-neutral-100 transition sm:text-sm sm:leading-6"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-10">
+                            <button type="submit" disabled class="block w-full rounded-sm bg-white px-3.5 py-2.5 text-center text-sm font-semibold text-neutral-900 shadow-sm hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 transition">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+          <div class="flex justify-center space-x-6 md:order-2">
+            <a href="https://instagram.com/wyzux_" target="_blank" class="text-neutral-400 hover:text-neutral-300 transition">
+              <span class="sr-only">Instagram</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="https://twitter.com/wvzyx_" target="_blank" class="text-neutral-400 hover:text-neutral-300 transition">
+              <span class="sr-only">Twitter</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+              </svg>
+            </a>
+            <a href="https://github.com/KneesDev/" target="_blank" class="text-neutral-400 hover:text-neutral-300 transition">
+              <span class="sr-only">GitHub</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+          <div class="mt-8 md:order-1 md:mt-0">
+            <p class="text-center text-xs leading-5 text-neutral-400">&copy; <script>document.write(new Date().getFullYear());</script> wyzux <em>(KneesDev)</em></p>
+          </div>
         </div>
-    </div>
-    <div class="modal" id="dosModal">
-        <div class="window" id="dosWindow">
-            <div class="title-bar" id="dosModal-header">
-                <div class="title-bar-text">MS-DOS</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Close" class="title-bar-button" onclick="closeDos()"></button>
-                </div>
-            </div>
-            <div class="window-body">
-                <p>I'm still working on it 😭</p>
-            </div>
-        </div>
-    </div>
-    <div class="modal" id="aboutModal">
-        <div class="window" id="aboutWindow">
-            <div class="title-bar" id="aboutModal-header">
-                <div class="title-bar-text">About</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Close" class="title-bar-button" onclick="closeAboutModal()"></button>
-                </div>
-            </div>
-            <div class="window-body">
-                <p>Hi there, I'm a content creator, music producer, developer, and a huge K-Pop fan.</p>
-                <p>I'm obsessed with these groups:</p>
-                <ul>
-                    <li>IVE</li>
-                    <li>TWICE</li>
-                    <li>aespa</li>
-                    <li>GFRIEND</li>
-                    <li>ITZY</li>
-                </ul>
-                <p>My favorite programming languages are:</p>
-                <ul>
-                    <li>C#</li>
-                    <li>PHP</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="modal" id="contactModal">
-        <div class="window" id="contactWindow">
-            <div class="title-bar" id="contactModal-header">
-                <div class="title-bar-text">Contact Me</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Close" class="title-bar-button" onclick="closeContactModal()"></button>
-                </div>
-            </div>
-            <div class="window-body">
-                <p>If you'd like to contact me, you can send an email at <a href="mailto:kneesdev@hotmail.com">kneesdev@hotmail.com</a>.</p>
-            </div>
-        </div>
-    </div>
-    <div class="modal" id="donateModal">
-        <div class="window" id="donateWindow">
-            <div class="title-bar" id="donateModal-header">
-                <div class="title-bar-text">Donate</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Close" class="title-bar-button" onclick="closeDonateModal()"></button>
-                </div>
-            </div>
-            <div class="window-body">
-                <p>If you'd like to support me, you can donate via one of the following methods:</p>
-                <p><a href="https://ko-fi.com/kneesdev" target="_blank">Donate via Ko-fi</a></p>
-                <div class="crypto">
-                    <img src="/assets/icons/bitcoin.png" alt="Bitcoin" height="14px" width="14px">
-                    <p>bc1qqnwaqycy6mz9tmws6qx5magsww6uxryctg7z8p</p>
-                </div>
-                <div class="crypto">
-                    <img src="/assets/icons/ethereum.png" alt="Ethereum" height="14px" width="14px">
-                    <p>0x744c40A263c9CbE24185a790C8Ec549ca3E3d487</p>
-                </div>
-                <div class="crypto">
-                    <img src="/assets/icons/litecoin.png" alt="Litecoin" height="14px" width="14px">
-                    <p>ltc1qu7q4hegc3gn6nfasksygk3pndpk33rsj0qy64l</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="/assets/js/script.js"></script>
+      </footer>
 </body>
+
+<script src="/assets/js/aos.js"></script>
+<script src="/assets/js/script.js"></script>
 
 </html>
